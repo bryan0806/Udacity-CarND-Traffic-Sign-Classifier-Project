@@ -87,7 +87,7 @@ After transform:![transform][image13]
 
 In the 7th code cell of IPython notebook, I define Color normalization function.
 
-This function make R/G/B value from 0~255 to 0~1, so it is easy and less error for future computation.
+This function make R/G/B value from 0-255 to 0-1, so it is easy and less error for future computation.
 
 I let all image to apply this function before training.
 
@@ -99,30 +99,36 @@ To cross validate my model, I randomly split the training data into a training s
 
 My final training set had X number of images. My validation set and test set had Y and Z number of images.
 
-The sixth code cell of the IPython notebook contains the code for augmenting(image transform) the data set. I decided to generate additional data because more data could let the training more robust and it did rise my accuracy. To add more data to the the data set, I used the following techniques because ... 
+The sixth code cell of the IPython notebook contains the code for augmenting(image transform) the data set. I decided to generate additional data because more data could let the training more robust and it did rise my accuracy. To add more data to the the data set, I used opencv library to do specified range of rotate/affine/brightness effect on original data set.  
 
 Here is an example of an original image and an augmented image:
 
 Origin:![origin][image12]
 After transform:![transform][image13]
 
-The difference between the original data set and the augmented data set is the following ... 
-
 
 ####3. Describe, and identify where in your code, what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
 
-The code for my final model is located in the seventh cell of the ipython notebook. 
+The code for my final model is located in the 23th cell of the ipython notebook. 
 
 My final model consisted of the following layers:
 
 | Layer         		|     Description	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | Input         		| 32x32x3 RGB image   							| 
-| Convolution 3x3     	| 1x1 stride, same padding, outputs 32x32x64 	|
+| Convolution 4x4     	| 1x1 stride, valid padding, outputs 28x28x6 	|
 | RELU					|												|
-| Max pooling	      	| 2x2 stride,  outputs 16x16x64 				|
-| Convolution 3x3	    | etc.      									|
-| Fully connected		| etc.        									|
+| Dropout :0.5					|												|
+| Max pooling	      	| 2x2 stride,  outputs 14x14x6 				|
+| Convolution 4x4	    | 1x1 stride, valid padding, outputs 10x10x32     									|
+| RELU					|												|
+| Max pooling	      	| 2x2 stride,  outputs 5x5x32 				|
+| Flatten     	| Input 5x5x32, outputs 800 	|
+| Fully connected		| Input 800 outputs 120       	|
+| RELU					|												|
+| Fully connected		| Input 120 outputs 84       	|
+| RELU					|												|
+| Fully connected		| Input 84 outputs 43       	|
 | Softmax				| etc.        									|
 |						|												|
 |						|												|
@@ -137,7 +143,7 @@ To train the model, I used an ....
 
 ####5. Describe the approach taken for finding a solution. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
-The code for calculating the accuracy of the model is located in the ninth cell of the Ipython notebook.
+The code for calculating the accuracy of the model is located in the ??? cell of the Ipython notebook.
 
 My final model results were:
 * training set accuracy of ?
