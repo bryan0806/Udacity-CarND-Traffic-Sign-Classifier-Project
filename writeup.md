@@ -56,7 +56,7 @@ Here is an exploratory visualization of the data set. It is a bar chart showing 
 
 You can see that the most seen sign is index 2 sign : 
 
-![Training set data][chart1.png]
+![Training set data][examples/grayscale.jpg]
 
 ###Design and Test a Model Architecture
 
