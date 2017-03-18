@@ -23,6 +23,10 @@ The goals / steps of this project are the following:
 [image6]: ./examples/placeholder.png "Traffic Sign 3"
 [image7]: ./examples/placeholder.png "Traffic Sign 4"
 [image8]: ./examples/placeholder.png "Traffic Sign 5"
+[image9]: ./chart1.png
+[image10]:./Report/origin.jpg
+[image11]:./Report/hisequ.jpg
+
 
 ## Rubric Points
 ###Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
@@ -43,10 +47,10 @@ The code for this step is contained in the second code cell of the IPython noteb
 I used python code to calculate summary statistics of the traffic
 signs data set:
 
-* The size of training set is ? 34799
-* The size of test set is ? 12630
-* The shape of a traffic sign image is ? (32, 32, 3)
-* The number of unique classes/labels in the data set is ? 43
+* The size of training set is  34799
+* The size of test set is  12630
+* The shape of a traffic sign image is  (32, 32, 3)
+* The number of unique classes/labels in the data set is 43
 
 ####2. Include an exploratory visualization of the dataset and identify where the code is in your code file.
 
@@ -54,15 +58,24 @@ The code for this step is contained in the third code cell of the IPython notebo
 
 Here is an exploratory visualization of the data set. It is a bar chart showing how the data distribution.
 
-You can see that the most seen sign is index 2 sign : 
+You can see that the most seen sign is index 2 sign : Speed limit (50km/h)
 
-![Training set data][examples/grayscale.jpg]
+
+![Training set data][image9]
 
 ###Design and Test a Model Architecture
 
 ####1. Describe how, and identify where in your code, you preprocessed the image data. What tecniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc.
 
-The code for this step is contained in the fourth code cell of the IPython notebook.
+In the sixth code cell of the IPython notebook, I define 2 functions for future use:
+
+1. Color normalization : Making R/G/B histogram equalization can help to make clear for some too dark or too bright images.
+
+Here is an example of histogram equalization:
+
+![origin][image10] ![histogram equalization][image11]
+
+2.
 
 As a first step, I decided to convert the images to grayscale because ...
 
