@@ -26,6 +26,8 @@ The goals / steps of this project are the following:
 [image9]: ./chart1.png
 [image10]:./Report/origin.jpg
 [image11]:./Report/hisequ.jpg
+[image12]:./Report/origin2.jpg
+[image13]:./Report/transform1.jpg
 
 
 ## Rubric Points
@@ -73,17 +75,21 @@ In the sixth code cell of the IPython notebook, I define 2 functions for future 
 
 Here is an example of histogram equalization:
 
-![origin][image10] ![histogram equalization][image11]
+Origin:![origin][image10] 
+After historgram equalization:![histogram equalization][image11]
 
-2.
+2. Image Transformation: Some range of Rotate/Shear/Brightness Effect on image.
 
-As a first step, I decided to convert the images to grayscale because ...
+Here is an example of transform image:
 
-Here is an example of a traffic sign image before and after grayscaling.
+Origin:![origin][image12]
+After transform:![transform][image13]
 
-![alt text][image2]
+In the 7th code cell of IPython notebook, I define Color normalization function.
 
-As a last step, I normalized the image data because ...
+This function make R/G/B value from 0~255 to 0~1, so it is easy and less error for future computation.
+
+I let all image to apply this function before training.
 
 ####2. Describe how, and identify where in your code, you set up training, validation and testing data. How much data was in each set? Explain what techniques were used to split the data into these sets. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, identify where in your code, and provide example images of the additional data)
 
@@ -93,11 +99,12 @@ To cross validate my model, I randomly split the training data into a training s
 
 My final training set had X number of images. My validation set and test set had Y and Z number of images.
 
-The sixth code cell of the IPython notebook contains the code for augmenting the data set. I decided to generate additional data because ... To add more data to the the data set, I used the following techniques because ... 
+The sixth code cell of the IPython notebook contains the code for augmenting(image transform) the data set. I decided to generate additional data because more data could let the training more robust and it did rise my accuracy. To add more data to the the data set, I used the following techniques because ... 
 
 Here is an example of an original image and an augmented image:
 
-![alt text][image3]
+Origin:![origin][image12]
+After transform:![transform][image13]
 
 The difference between the original data set and the augmented data set is the following ... 
 
