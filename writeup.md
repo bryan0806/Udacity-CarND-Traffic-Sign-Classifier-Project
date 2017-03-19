@@ -18,11 +18,11 @@ The goals / steps of this project are the following:
 [image1]: ./examples/visualization.jpg "Visualization"
 [image2]: ./examples/grayscale.jpg "Grayscaling"
 [image3]: ./examples/random_noise.jpg "Random Noise"
-[image4]: ./test_images/04273.ppm "Traffic Sign 1"
+[image4]: ./test_images/04273.jpg "Traffic Sign 1"
 [image5]: ./test_images/04420.ppm "Traffic Sign 2"
 [image6]: ./test_images/04491.ppm "Traffic Sign 3"
 [image7]: ./test_images/04941.ppm "Traffic Sign 4"
-[image8]: ./test_images/05057.ppm "Traffic Sign 5"
+[image8]: ./test_images/05057.jpg "Traffic Sign 5"
 [image9]: ./chart1.png
 [image10]:./Report/origin.jpg
 [image11]:./Report/hisequ.jpg
@@ -190,7 +190,7 @@ This prove my vision about this structure that it did work well on traffic sign 
 
 Here are five German traffic signs that I found on the web:
 
-![alt text][image10] ![alt text][image5] ![alt text][image6] 
+![alt text][image4] ![alt text][image5] ![alt text][image6] 
 ![alt text][image7] ![alt text][image8]
 
 The first image might be difficult to classify because ...
