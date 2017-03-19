@@ -28,6 +28,7 @@ The goals / steps of this project are the following:
 [image11]:./Report/hisequ.jpg
 [image12]:./Report/origin2.jpg
 [image13]:./Report/transform1.jpg
+[image14]:./Report/chart2.png
 
 
 ## Rubric Points
@@ -93,11 +94,15 @@ I let all image to apply this function before training.
 
 ####2. Describe how, and identify where in your code, you set up training, validation and testing data. How much data was in each set? Explain what techniques were used to split the data into these sets. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, identify where in your code, and provide example images of the additional data)
 
-The code for splitting the data into training and validation sets is contained in the fifth code cell of the IPython notebook.  
+The code for splitting the data into training and validation sets is contained in the ??? code cell of the IPython notebook.  
 
-To cross validate my model, I randomly split the training data into a training set and validation set. I did this by ...
+To make my training data has same possibility of each sign, I look into the number of each unique sign then make it almost same.
 
-My final training set had X number of images. My validation set and test set had Y and Z number of images.
+Here is the final training set number of each sign.
+
+![equal times][image14]
+
+My final training set had ?? number of images. My validation set and test set had ?? and ?? number of images.
 
 The sixth code cell of the IPython notebook contains the code for augmenting(image transform) the data set. I decided to generate additional data because more data could let the training more robust and it did rise my accuracy. To add more data to the the data set, I used opencv library to do specified range of rotate/affine/brightness effect on original data set.  
 
