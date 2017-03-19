@@ -18,11 +18,11 @@ The goals / steps of this project are the following:
 [image1]: ./examples/visualization.jpg "Visualization"
 [image2]: ./examples/grayscale.jpg "Grayscaling"
 [image3]: ./examples/random_noise.jpg "Random Noise"
-[image4]: ./examples/placeholder.png "Traffic Sign 1"
-[image5]: ./examples/placeholder.png "Traffic Sign 2"
-[image6]: ./examples/placeholder.png "Traffic Sign 3"
-[image7]: ./examples/placeholder.png "Traffic Sign 4"
-[image8]: ./examples/placeholder.png "Traffic Sign 5"
+[image4]: ./test_images/04273.ppm "Traffic Sign 1"
+[image5]: ./test_images/04420.ppm "Traffic Sign 2"
+[image6]: ./test_images/04491.ppm "Traffic Sign 3"
+[image7]: ./test_images/04941.ppm "Traffic Sign 4"
+[image8]: ./test_images/05057.ppm "Traffic Sign 5"
 [image9]: ./chart1.png
 [image10]:./Report/origin.jpg
 [image11]:./Report/hisequ.jpg
@@ -170,8 +170,13 @@ With no dropout, the validation accuracy is always lower than training accuracy.
 
 If a well known architecture was chosen:
 * What architecture was chosen? Lenet
-* Why did you believe it would be relevant to the traffic sign application?
+* Why did you believe it would be relevant to the traffic sign application? We use Lenet on the number identification case before, and it works great. I think traffic sign has some number on it and think it should be work well on the same.
 * How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
+Traing accuarcy:
+Validation accuracy:
+Test accuracy:
+
+This prove my vision about this structure that it did work well on traffic sign classification.
  
 
 ###Test a Model on New Images
