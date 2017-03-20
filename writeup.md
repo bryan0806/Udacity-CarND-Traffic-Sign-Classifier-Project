@@ -19,9 +19,9 @@ The goals / steps of this project are the following:
 [image2]: ./examples/grayscale.jpg "Grayscaling"
 [image3]: ./examples/random_noise.jpg "Random Noise"
 [image4]: ./test_images/04273.jpg "Traffic Sign 1"
-[image5]: ./test_images/04420.ppm "Traffic Sign 2"
-[image6]: ./test_images/04491.ppm "Traffic Sign 3"
-[image7]: ./test_images/04941.ppm "Traffic Sign 4"
+[image5]: ./test_images/04420.jpg "Traffic Sign 2"
+[image6]: ./test_images/04491.jpg "Traffic Sign 3"
+[image7]: ./test_images/04941.jpg "Traffic Sign 4"
 [image8]: ./test_images/05057.jpg "Traffic Sign 5"
 [image9]: ./chart1.png
 [image10]:./Report/origin.jpg
@@ -102,6 +102,8 @@ Here is the final training set number of each sign.
 
 ![equal times][image14]
 
+I actually try to split some data from training set to validation set. I saw some article about "cross validation". Using this way, I actually get a better accuracy from training. But I think validation should be some picture that never show up in training would be more challenging. Therefore, I still keep the validation set untouched.
+
 My final training set had ?? number of images. My validation set and test set had ?? and ?? number of images.
 
 The sixth code cell of the IPython notebook contains the code for augmenting(image transform) the data set. I decided to generate additional data because more data could let the training more robust and it did rise my accuracy. To add more data to the the data set, I used opencv library to do specified range of rotate/affine/brightness effect on original data set.  
@@ -134,7 +136,7 @@ My final model consisted of the following layers:
 | Fully connected		| Input 120 outputs 84       	|
 | RELU					|												|
 | Fully connected		| Input 84 outputs 43       	|
-| Softmax				|         									|
+| softmax cross entropy		|         									|
 |						|												|
 |						|												|
  
@@ -158,31 +160,25 @@ My final model results were:
 * training set accuracy of ?
 * validation set accuracy of ? 
 * test set accuracy of ?
-
-If an iterative approach was chosen:
-* What was the first architecture that was tried and why was it chosen?
-* What were some problems with the initial architecture?
-* How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to over fitting or under fitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
-* Which parameters were tuned? How were they adjusted and why?
-    I adjust several several parameters:
     
     
-    I also
 * What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
 
 First I found that using dropout let the learning become slower, but with more Epoch the accuracy become higher than before.
 With no dropout, the validation accuracy is always lower than training accuracy. Therefore, I tune for several dropout. Finally I decide use total 1 dropout and 20 epoches to reach my best result.
 
 If a well known architecture was chosen:
-* What architecture was chosen? Lenet
-* Why did you believe it would be relevant to the traffic sign application? We use Lenet on the number identification case before, and it works great. I think traffic sign has some number on it and think it should be work well on the same.
+* What architecture was chosen? 
+Lenet
+* Why did you believe it would be relevant to the traffic sign application? 
+We use Lenet on the number identification case before, and it works great. I think traffic sign has some number on it and think it should be work well on the same.
 * How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
 Traing accuarcy:
 Validation accuracy:
 Test accuracy:
 
 This prove my vision about this structure that it did work well on traffic sign classification.
- 
+
 
 ###Test a Model on New Images
 
