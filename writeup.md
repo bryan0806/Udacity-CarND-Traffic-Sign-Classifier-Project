@@ -70,7 +70,9 @@ You can see that the most seen sign is index 2 sign : Speed limit (50km/h)
 
 ####1. Describe how, and identify where in your code, you preprocessed the image data. What tecniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc.
 
-In the sixth code cell of the IPython notebook, I define 2 functions for future use:
+First, I found that in the data set, there are a lot of pictures are too dark or hard to see with our eyes. And second, for some sign of the number of data set has much more than other sign. 
+
+Therefore, in the sixth code cell of the IPython notebook, I define 2 functions for future use:
 
 1. Color normalization : Making R/G/B histogram equalization can help to make clear for some too dark or too bright images.
 
@@ -92,9 +94,7 @@ This function make R/G/B value from 0-255 to 0-1, so it is easy and less error f
 
 I let all image to apply this function before training.
 
-####2. Describe how, and identify where in your code, you set up training, validation and testing data. How much data was in each set? Explain what techniques were used to split the data into these sets. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, identify where in your code, and provide example images of the additional data)
-
-The code for splitting the data into training and validation sets is contained in the ??? code cell of the IPython notebook.  
+####2. Describe how, and identify where in your code, you set up training, validation and testing data. How much data was in each set? Explain what techniques were used to split the data into these sets. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, identify where in your code, and provide example images of the additional data) 
 
 To make my training data has same possibility of each sign, I look into the number of each unique sign then make it almost same.
 
@@ -134,7 +134,7 @@ My final model consisted of the following layers:
 | Fully connected		| Input 120 outputs 84       	|
 | RELU					|												|
 | Fully connected		| Input 84 outputs 43       	|
-| Softmax				| etc.        									|
+| Softmax				|         									|
 |						|												|
 |						|												|
  
