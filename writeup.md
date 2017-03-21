@@ -188,8 +188,8 @@ This prove my vision about this structure that it did work well on traffic sign 
 
 Here are five German traffic signs that I found on the web:
 
-![alt text][image4] ![alt text][image5] ![alt text][image6] 
-![alt text][image7] ![alt text][image8]
+![alt text][image4] ![alt text][image8] ![alt text][image5] ![alt text][image6] 
+![alt text][image7] 
 
 The fifth image might be difficult to classify because the upper part of image is bright and lower part is dark. The brightness difference make it difficult to classify.
 
@@ -202,13 +202,14 @@ Here are the results of the prediction:
 | Image			        |     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | Road work     		| Road work 									| 
+| Pedestrians			| Pedestrians     							|
 | Wild animals crossing     			| Wild animals crossing 										|
 | Priority road					| Priority road											|
 | Yield	      		| Yield					 				|
-| Pedestrians			| Traffic signals      							|
 
 
-The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
+
+The model was able to correctly guess 5 of the 5 traffic signs, which gives an accuracy of 100%. 
 
 ####3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction and identify where in your code softmax probabilities were outputted. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
