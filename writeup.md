@@ -150,6 +150,8 @@ To train the model, I used an 0.01 learning rate. I did try other value, but did
 
 Lower learning rate and rise the epoches may work but it took a long time to get the final result. Consider the efficiency, I decide to use still 0.01.
 
+For the optimizer, I use AdamOptimizer. It has 2 parameter which I tuned it for a while. Beta1 =0.8 beta2=0.9. These 2 parameters are for learning rate decay. And I tried several values and decide to use 0.8 and 0.9 as my final value.
+
 
 
 ####5. Describe the approach taken for finding a solution. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
@@ -189,7 +191,7 @@ Here are five German traffic signs that I found on the web:
 ![alt text][image4] ![alt text][image5] ![alt text][image6] 
 ![alt text][image7] ![alt text][image8]
 
-The first image might be difficult to classify because ...
+The fifth image might be difficult to classify because the upper part of image is bright and lower part is dark. The brightness difference make it difficult to classify.
 
 ####2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. Identify where in your code predictions were made. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
@@ -199,11 +201,11 @@ Here are the results of the prediction:
 
 | Image			        |     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| Stop Sign      		| Stop sign   									| 
-| U-turn     			| U-turn 										|
-| Yield					| Yield											|
-| 100 km/h	      		| Bumpy Road					 				|
-| Slippery Road			| Slippery Road      							|
+| Road work     		| Road work 									| 
+| Wild animals crossing     			| Wild animals crossing 										|
+| Priority road					| Priority road											|
+| Yield	      		| Yield					 				|
+| Pedestrians			| Traffic signals      							|
 
 
 The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
