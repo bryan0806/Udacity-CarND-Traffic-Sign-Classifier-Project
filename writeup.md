@@ -70,7 +70,7 @@ You can see that the most seen sign is index 2 sign : Speed limit (50km/h)
 
 ####1. Describe how, and identify where in your code, you preprocessed the image data. What tecniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc.
 
-First, I found that in the data set, there are a lot of pictures are too dark or hard to see with our eyes. And second, for some sign of the number of data set has much more than other sign. 
+First, I found that in the data set, there are a lot of pictures are too dark or hard to see with our eyes. And second, the number of some signs has much more than others sign. For example, index 2, 1 and 38. 
 
 Therefore, in the sixth code cell of the IPython notebook, I define 2 functions for future use:
 
@@ -96,7 +96,7 @@ I let all image to apply this function before training.
 
 ####2. Describe how, and identify where in your code, you set up training, validation and testing data. How much data was in each set? Explain what techniques were used to split the data into these sets. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, identify where in your code, and provide example images of the additional data) 
 
-To make my training data has same possibility of each sign, I look into the number of each unique sign then make it almost same.
+To make my training data has same appearance chance of each sign, I look into the number of each unique sign then make it almost same.
 
 Here is the final training set number of each sign.
 
