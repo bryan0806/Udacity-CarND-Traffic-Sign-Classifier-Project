@@ -29,7 +29,8 @@ The goals / steps of this project are the following:
 [image12]:./Report/origin2.jpg
 [image13]:./Report/transform1.jpg
 [image14]:./Report/chart2.png
-
+[image15]:./Report/chart3.png
+[image16]:./Report/chart4.png
 
 ## Rubric Points
 ###Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
@@ -45,19 +46,20 @@ You're reading it! and here is a link to my [project code](https://github.com/br
 
 ####1. Provide a basic summary of the data set and identify where in your code the summary was done. In the code, the analysis should be done using python, numpy and/or pandas methods rather than hardcoding results manually.
 
-The code for this step is contained in the second code cell of the IPython notebook.  
+The code for this step is contained in the third code cell of the IPython notebook.  
 
 I used python code to calculate summary statistics of the traffic
 signs data set:
 
 * The size of training set is  34799
 * The size of test set is  12630
+* The size of valid set is 4410
 * The shape of a traffic sign image is  (32, 32, 3)
 * The number of unique classes/labels in the data set is 43
 
 ####2. Include an exploratory visualization of the dataset and identify where the code is in your code file.
 
-The code for this step is contained in the third code cell of the IPython notebook.  
+The code for this step is contained in the fourth code cell of the IPython notebook.  
 
 Here is an exploratory visualization of the data set. It is a bar chart showing how the data distribution.
 
@@ -72,7 +74,7 @@ You can see that the most seen sign is index 2 sign : Speed limit (50km/h)
 
 First, I found that in the data set, there are a lot of pictures are too dark or hard to see with our eyes. And second, the number of some signs has much more than others sign. For example, index 2, 1 and 38. 
 
-Therefore, in the sixth code cell of the IPython notebook, I define 2 functions for future use:
+Therefore, in the eighth code cell of the IPython notebook, I define 2 functions for future use:
 
 1. Color normalization : Making R/G/B histogram equalization can help to make clear for some too dark or too bright images.
 
@@ -98,15 +100,17 @@ I let all image to apply this function before training.
 
 To make my training data has same appearance chance of each sign, I look into the number of each unique sign then make it almost same.
 
-Here is the final training set number of each sign.
+Here is the final training set number of each sign. I also make the test set has almost same number of each sign.(It may be no necessary to do so.)
 
 ![equal times][image14]
 
+![test_set][image15]
+
 I actually try to split some data from training set to validation set. I saw some article about "cross validation". Using this way, I actually get a better accuracy from training. But I think validation should be some picture that never show up in training would be more challenging. Therefore, I still keep the validation set untouched.
 
-My final training set had ?? number of images. My validation set and test set had ?? and ?? number of images.
+My final training set had 86388 number of images. My validation set and test set had 4410 and 32208 number of images.
 
-The sixth code cell of the IPython notebook contains the code for augmenting(image transform) the data set. I decided to generate additional data because more data could let the training more robust and it did rise my accuracy. To add more data to the the data set, I used opencv library to do specified range of rotate/affine/brightness effect on original data set.  
+The 10th code cell of the IPython notebook contains the code for augmenting(image transform) the data set. I decided to generate additional data because more data could let the training more robust and it did rise my accuracy. To add more data to the the data set, I used opencv library to do specified range of rotate/affine/brightness effect on original data set.  
 
 Here is an example of an original image and an augmented image:
 
@@ -116,7 +120,7 @@ After transform:![transform][image13]
 
 ####3. Describe, and identify where in your code, what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
 
-The code for my final model is located in the 23th cell of the ipython notebook. 
+The code for my final model is located in the 20th cell of the ipython notebook. 
 
 My final model consisted of the following layers:
 
@@ -144,7 +148,7 @@ My final model consisted of the following layers:
 
 ####4. Describe how, and identify where in your code, you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
-The code for training the model is located in the ??? cell of the ipython notebook. 
+The code for training the model is located in the 26th cell of the ipython notebook. 
 
 To train the model, I used an 0.01 learning rate. I did try other value, but did not get a better result.
 
@@ -156,12 +160,12 @@ For the optimizer, I use AdamOptimizer. It has 2 parameter which I tuned it for 
 
 ####5. Describe the approach taken for finding a solution. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
-The code for calculating the accuracy of the model is located in the ??? cell of the Ipython notebook.
+The code for calculating the accuracy of the model is located in the 25 cell of the Ipython notebook.
 
 My final model results were:
-* training set accuracy of ?
-* validation set accuracy of ? 
-* test set accuracy of ?
+* training set accuracy of 98.4%
+* validation set accuracy of 94.4% 
+* test set accuracy of 75.1%
     
     
 * What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
@@ -175,9 +179,9 @@ Lenet
 * Why did you believe it would be relevant to the traffic sign application? 
 We use Lenet on the number identification case before, and it works great. I think traffic sign has some number on it and think it should be work well on the same.
 * How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
-Traing accuarcy:
-Validation accuracy:
-Test accuracy:
+Traing accuarcy: 98.4%
+Validation accuracy: 94.4%
+Test accuracy: 75.1%
 
 This prove my vision about this structure that it did work well on traffic sign classification.
 
@@ -202,28 +206,39 @@ Here are the results of the prediction:
 | Image			        |     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | Road work     		| Road work 									| 
-| Pedestrians			| Pedestrians     							|
+| Pedestrians			| Traffic signals     							|
 | Wild animals crossing     			| Wild animals crossing 										|
 | Priority road					| Priority road											|
 | Yield	      		| Yield					 				|
 
 
 
-The model was able to correctly guess 5 of the 5 traffic signs, which gives an accuracy of 100%. 
+The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%.
+This is closed to my testing accuracy which is about 75%.
 
 ####3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction and identify where in your code softmax probabilities were outputted. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
-The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
+The code for making predictions on my final model is located in the 33th cell of the Ipython notebook.
 
-For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
+For the first image, the model is relatively sure that this is a Road work (probability of 0.99), and the image does contain a Road work sign. The top five soft max probabilities were
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| .60         			| Stop sign   									| 
-| .20     				| U-turn 										|
-| .05					| Yield											|
-| .04	      			| Bumpy Road					 				|
-| .01				    | Slippery Road      							|
+| .99         			| Road work  									| 
+| .01     				| Traffic signals 										|
+| .001					|Dangerous curve to the right										|
+| .001	      			| Road narrows on the right				 				|
+| .001				    | Beware of ice/snow      							|
 
 
-For the second image ... 
+For the second image, this is the only wrong answer for all my 5 prediction.
+
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| .94         			| Traffic signals									| 
+| .02     				|Pedestrians(correct answer)									|
+| .01					|General caution										|
+| .01	      			| Wild animals crossing				 				|
+| .01				    | Road work     							|
+
+For the rest of 3 images, this model all correctly predict the answer with 99%.
